@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autoworkshop_Management_System
 {
-    internal class Vehicle
+    internal abstract class Vehicle
     {
         public int VechicleID { get; set; }
 
@@ -21,5 +21,10 @@ namespace Autoworkshop_Management_System
         public int Wheels { get; set; }
 
         public string GearType { get; set; }
+
+        public abstract void GetVechicleData();
+   
+
+       
     }
 }

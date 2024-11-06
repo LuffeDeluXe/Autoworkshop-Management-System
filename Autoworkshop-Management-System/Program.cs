@@ -9,7 +9,6 @@ namespace Autoworkshop_Management_System
             SqlConnection db = new SqlConnection();
 
 
-
         }
     }
 }

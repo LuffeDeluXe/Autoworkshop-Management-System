@@ -10,5 +10,10 @@ namespace Autoworkshop_Management_System
     {
         public int Doors { get; set; }
         public int Airbags { get; set; }
+
+        public override void GetVechicleData()
+        {
+            Console.WriteLine($"{VechicleID} {Model} {Doors} {Airbags}");
+        }
     }
 }

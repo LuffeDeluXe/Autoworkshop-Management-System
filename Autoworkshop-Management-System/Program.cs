@@ -1,10 +1,15 @@
-﻿namespace Autoworkshop_Management_System
+﻿using Microsoft.Data.SqlClient;
+
+namespace Autoworkshop_Management_System
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            SqlConnection db = new SqlConnection();
+
+
+
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Autoworkshop_Management_System
     {
         static void Main(string[] args)
         {
-            
+
         }
 
     }

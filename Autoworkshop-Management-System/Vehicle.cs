@@ -22,7 +22,7 @@ namespace Autoworkshop_Management_System
 
         public string GearType { get; set; }
 
-        public abstract void GetVechicleData();
+        public abstract void GetVehicleData();
    
 
        

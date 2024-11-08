@@ -11,7 +11,7 @@ namespace Autoworkshop_Management_System
     {
         public string Handles { get; set; }
 
-        public override void GetVechicleData()
+        public override void GetVehicleData()
         {
             List<Motorcycle> ListOfCars = new List<Motorcycle>();
 
@@ -24,7 +24,7 @@ namespace Autoworkshop_Management_System
             {
                 connection.Open();
 
-                string query = "select * from Motorcycle\njoin Vehicle on Motorcycle.VechicleID = Vehicle.VehicleID";
+                string query = "select * from Motorcycle\njoin Vehicle on Motorcycle.VehicleID = Vehicle.VehicleID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

@@ -12,7 +12,7 @@ namespace Autoworkshop_Management_System
         public int Doors { get; set; }
         public string Airbags { get; set; }
 
-        public override void GetVechicleData()
+        public override void GetVehicleData()
         {
             List<Car> ListOfCars = new List<Car>();
 

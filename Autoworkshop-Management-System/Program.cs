@@ -7,10 +7,10 @@ namespace Autoworkshop_Management_System
         static void Main(string[] args)
         {
             Car car = new Car();
-            car.GetVechicleData();
+            car.GetVehicleData();
 
             Motorcycle motorcycle = new Motorcycle();
-            motorcycle.GetVechicleData();
+            motorcycle.GetVehicleData();
         }
 
     }

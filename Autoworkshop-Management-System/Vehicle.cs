@@ -8,7 +8,7 @@ namespace Autoworkshop_Management_System
 {
     internal abstract class Vehicle
     {
-        public int VechicleID { get; set; }
+        public int VehicleID { get; set; }
 
         public string Model { get; set; }
 

@@ -33,7 +33,7 @@ namespace Autoworkshop_Management_System
                         while (reader.Read())
                         {
                             Motorcycle vehicleFromDB = new Motorcycle();
-                            vehicleFromDB.VechicleID = Convert.ToInt32(reader["VehicleID"]);
+                            vehicleFromDB.VehicleID = Convert.ToInt32(reader["VehicleID"]);
                             vehicleFromDB.Model = reader["Model"].ToString();
                             vehicleFromDB.Brand = reader["Brand"].ToString();
                             vehicleFromDB.Year = Convert.ToInt32(reader["Year"]);
@@ -44,7 +44,7 @@ namespace Autoworkshop_Management_System
 
                             Console.WriteLine($"" +
                                 $"------------------------------\n" +
-                                $"ID: {vehicleFromDB.VechicleID}\n" +
+                                $"ID: {vehicleFromDB.VehicleID}\n" +
                                 $"BRAND: {vehicleFromDB.Brand}\n" +
                                 $"MODEL: {vehicleFromDB.Model}\n" +
                                 $"YEAR: {vehicleFromDB.Year}\n" +

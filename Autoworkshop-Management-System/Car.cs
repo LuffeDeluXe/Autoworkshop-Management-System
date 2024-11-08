@@ -10,7 +10,7 @@ namespace Autoworkshop_Management_System
     internal class Car : Vehicle
     {
         public int Doors { get; set; }
-        public int Airbags { get; set; }
+        public string Airbags { get; set; }
 
         public override void GetVechicleData()
         {
@@ -25,7 +25,7 @@ namespace Autoworkshop_Management_System
             {
                 connection.Open();
 
-                string query = "SELECT * FROM Car";
+                string query = "select * from PrivateCar\njoin Vehicle on PrivateCar.VehicleID = Vehicle.VehicleID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -34,19 +34,19 @@ namespace Autoworkshop_Management_System
                         while (reader.Read())
                         {
                             Car vehicleFromDB = new Car();
-                            vehicleFromDB.VechicleID = Convert.ToInt32(reader["VehicleID"]);
+                            vehicleFromDB.VehicleID = Convert.ToInt32(reader["VehicleID"]);
                             vehicleFromDB.Model = reader["Model"].ToString();
                             vehicleFromDB.Brand = reader["Brand"].ToString();
                             vehicleFromDB.Year = Convert.ToInt32(reader["Year"]);
                             vehicleFromDB.LicensePlate = reader["LicensePlate"].ToString();
-                            vehicleFromDB.Wheels = Convert.ToInt32(reader["Wheels"]);
+                            vehicleFromDB.Wheels = reader["Wheels"].ToString();
                             vehicleFromDB.GearType = reader["GearType"].ToString();
                             vehicleFromDB.Doors = Convert.ToInt32(reader["Doors"]);
-                            vehicleFromDB.Airbags = Convert.ToInt32(reader["Airbags"]);
+                            vehicleFromDB.Airbags = reader["Airbags"].ToString();
 
                             Console.WriteLine($"" +
                                 $"------------------------------\n" +
-                                $"ID: {vehicleFromDB.VechicleID}\n" +
+                                $"ID: {vehicleFromDB.VehicleID}\n" +
                                 $"BRAND: {vehicleFromDB.Brand}\n" +
                                 $"MODEL: {vehicleFromDB.Model}\n" +
                                 $"YEAR: {vehicleFromDB.Year}\n" +

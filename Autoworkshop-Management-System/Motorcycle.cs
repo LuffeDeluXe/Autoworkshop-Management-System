@@ -9,7 +9,7 @@ namespace Autoworkshop_Management_System
 {
     internal class Motorcycle : Vehicle
     {
-        public int Handles { get; set; }
+        public string Handles { get; set; }
 
         public override void GetVechicleData()
         {
@@ -24,7 +24,7 @@ namespace Autoworkshop_Management_System
             {
                 connection.Open();
 
-                string query = "SELECT * FROM Motorcycle";
+                string query = "select * from Motorcycle\njoin Vehicle on Motorcycle.VechicleID = Vehicle.VehicleID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -38,9 +38,9 @@ namespace Autoworkshop_Management_System
                             vehicleFromDB.Brand = reader["Brand"].ToString();
                             vehicleFromDB.Year = Convert.ToInt32(reader["Year"]);
                             vehicleFromDB.LicensePlate = reader["LicensePlate"].ToString();
-                            vehicleFromDB.Wheels = Convert.ToInt32(reader["Wheels"]);
+                            vehicleFromDB.Wheels = reader["Wheels"].ToString();
                             vehicleFromDB.GearType = reader["GearType"].ToString();
-                            vehicleFromDB.Handles = Convert.ToInt32(reader["Handles"]);
+                            vehicleFromDB.Handles = reader["Handles"].ToString();
 
                             Console.WriteLine($"" +
                                 $"------------------------------\n" +

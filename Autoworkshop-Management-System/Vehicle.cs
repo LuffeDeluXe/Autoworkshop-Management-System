@@ -18,7 +18,7 @@ namespace Autoworkshop_Management_System
 
         public string LicensePlate { get; set; }
 
-        public int Wheels { get; set; }
+        public string Wheels { get; set; }
 
         public string GearType { get; set; }
 
